@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang='EN'>
+    <head>
+        <script>
+            let colors = ['#e05524', '#cc8a21', '#d6d61a', '#35b031', '#2fb3ba', '#4c4fcf', '#8530b0'];
+            let images = ["url('backimage1.jpg')", "url('backimage2.jpg')", "url('backimage3.jpg')"];
+
+
+            document.addEventListener('DOMContentLoaded', function(){
+                document.querySelector('form').addEventListener('submit', function(){
+                    window.name = document.querySelector('input#name').value;
+                })
+                let output = document.querySelector('#output');
+                output.innerHTML = window.name;
+                let randomImage = Math.floor(Math.random() * 3);
+                let body = document.querySelector('body');
+                body.style.backgroundImage = images[randomImage];
+            })
+            // Add color
+            let counter = 0;
+            function blink(){
+                let output = document.querySelector('#output');
+                if (output.style.visibility == 'visible') {
+                    output.style.visibility = 'hidden';
+                }
+                else {
+                    if (counter == colors.length){
+                        counter = 0;
+                    }
+                    output.style.color = colors[counter];
+                    output.style.visibility = 'visible';
+                    counter ++;
+
+                }
+            }
+
+           window.setInterval(blink, 65);
+
+
+        </script>
+        <link href="form-styles.css" rel="stylesheet">
+        <title>Form</title>
+    </head>
+    <body>
+        <p>Type your name and we will make it kira-kira.</p>
+        <form>
+            <input name='name' id='name' type='text' autocomplete='off' placeholder="Name:">
+            <input type='submit' name='submit' id='submit'>
+        </form>
+        <p id='output'>
+
+
+        </p>
+    </body>
+</html>
