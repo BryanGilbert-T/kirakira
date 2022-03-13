@@ -1,0 +1,37 @@
+body
+{
+    background-image: url('backimage.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+p
+{
+    color: #FFFFFF;
+    margin: 5 0 0 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+form
+{
+    text-align:center;
+}
+input
+{
+    height:25px;
+    width: 400px;
+}
+#submit
+{
+width: 75px;
+}
+#submit:hover
+{
+    background-color: #07E5EA;
+}
+
+#output
+{
+    font-size: 50px;
+}
